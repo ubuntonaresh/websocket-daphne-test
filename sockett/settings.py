@@ -29,8 +29,12 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+# pip install channels==3.0.4
+# pip install --upgrade channels
+
 
 INSTALLED_APPS = [
+    # "daphne",
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -69,8 +73,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'sockett.wsgi.application'
-WSGI_APPLICATION = 'sockett.routing.application'
+# WSGI_APPLICATION = 'sockett.wsgi.application'
+ASGI_APPLICATION = 'sockett.asgi.application'
 
 
 # Database

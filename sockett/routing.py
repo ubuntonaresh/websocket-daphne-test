@@ -1,18 +1,6 @@
-from channels.routing import ProtocolTypeRouter, URLRouter
-from channels.auth import AuthMiddlewareStack
-from django.core.asgi import get_asgi_application
-from django.urls import path
-from socketapis.consumers import MyConsumer
+from django.urls import re_path
+from socketapis import consumers
 
-application = ProtocolTypeRouter(
-   {
-       'http': get_asgi_application(),
-       'websocket': AuthMiddlewareStack(
-           URLRouter(
-               [
-                   path('ws/mysocket/', MyConsumer.as_asgi()),
-               ]
-           )
-       ),
-   }
-)
+websocket_urlpatterns = [
+    re_path(r'ws/notifications/$', consumers.NotificationConsumer.as_asgi()),
+]
