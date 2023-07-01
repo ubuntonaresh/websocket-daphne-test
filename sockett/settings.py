@@ -73,7 +73,7 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'sockett.wsgi.application'
+WSGI_APPLICATION = 'sockett.wsgi.application'
 ASGI_APPLICATION = 'sockett.asgi.application'
 
 
